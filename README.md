@@ -110,5 +110,6 @@ The backlog is planning work, not implementation evidence. Its first task requir
 ## Team
 
 - Ikpemhinoghena Etiuzale: confirmed project initiator.
+- Jackson Cole Taylor ([Jctman5](https://github.com/Jctman5)): team member; contributed the README team listing in [PR #19](https://github.com/ikpemhinoghena/goalbuddy/pull/19).
 
 No other team members, assignments, meetings, votes, or approving reviews are asserted without verified evidence.
