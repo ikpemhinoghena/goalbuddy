@@ -79,5 +79,6 @@ Verified on 2026-11-20: 15 open implementation issues (#3-#17), all represented 
 ## Team
 
 - Ikpemhinoghena Etiuzale: verified project initiator and independent implementer.
+- Jackson Cole Taylor ([Jctman5](https://github.com/Jctman5)): team member; contributed the README team listing in [PR #19](https://github.com/ikpemhinoghena/goalbuddy/pull/19).
 
-The user reports instructor permission to proceed independently because teammates are inactive. No other member identity, meeting attendance, contribution, vote, or approval is asserted without evidence.
+Earlier project implementation proceeded independently under reported instructor permission. No additional member identities, meeting attendance, contributions, votes, or teammate approvals are asserted without verified evidence.
