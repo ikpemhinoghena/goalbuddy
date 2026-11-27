@@ -55,8 +55,8 @@ export default function Home() {
             </a>
           </div>
           <p className="mt-5 max-w-lg text-sm leading-6 text-muted">
-            GoalBuddy is in development. Explore the layout; accounts and saved plans are not
-            available yet.
+            GoalBuddy is in development. Sign in with GitHub to create and manage goals; milestones,
+            tasks, and progress tracking are coming next.
           </p>
         </div>
         <aside

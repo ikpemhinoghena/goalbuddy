@@ -7,9 +7,9 @@ export default function WorkspaceLayout({ children }: { children: ReactNode }) {
         aria-label="Preview information"
         className="rounded-xl border border-border bg-accent-soft px-5 py-4 text-sm leading-6 text-primary-dark"
       >
-        <strong>Design preview.</strong> This is an example of an empty workspace, not a signed-in
-        account. No personal data is loaded or saved. Account access and goal editing are still in
-        development.
+        <strong>Design preview.</strong> This dashboard is an empty example, not your account. No
+        personal data is loaded here. Signed-in goal management is available on the Goals page;
+        milestones, tasks, and progress tracking are still in development.
       </aside>
       {children}
     </div>

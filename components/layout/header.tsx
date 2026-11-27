@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { Suspense } from 'react';
+import { AccountNav } from './account-nav';
 
 export function Header() {
   return (
@@ -28,8 +30,11 @@ export function Header() {
             Workspace preview
           </Link>
           <Link href="/goals" className="rounded-lg px-3 py-2 hover:bg-surface">
-            Goals preview
+            Goals
           </Link>
+          <Suspense fallback={null}>
+            <AccountNav />
+          </Suspense>
         </nav>
       </div>
     </header>
