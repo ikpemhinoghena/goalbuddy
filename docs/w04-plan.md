@@ -49,3 +49,19 @@ Suggested field order for each factual update: date and author; completed work w
 Prepared update for 2026-11-20: “I continued GoalBuddy independently under the instructor permission I previously reported. Week 03 architecture, four-entity data model, visual foundation and local preview routes are prepared. The existing 15 issues now have priorities and linked dependencies; #3–#9 form the Week 04 secure-goal milestone and are assigned to me. The changes are uncommitted pending my chosen commit message. Next is review of the provider/security decisions, then validation and persistence. Project custom-field edits require Projects access, and an assigned teammate PR is still needed for the separate review requirement. No team meeting or peer approval occurred in this work.”
 
 This message is a draft only; nothing was sent to Microsoft Teams.
+
+## Week 04 implementation status (2026-11-27)
+
+Implemented on `feature/w04-secure-goal-workflow`. Evidence is in [w04-verification.md](w04-verification.md).
+
+| Issue   | Delivered in Week 04                                                                                                                                             | Still open                                                                       |
+| ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| #3 T001 | Auth.js v5 with GitHub, PostgreSQL through `pg`, PGlite-backed tests; session, CSRF and revision policies recorded in the code and data model                    | Reviewer acknowledgement of the branch-ancestry exception and provider decisions |
+| #4 T002 | Full schema with constraints, immutable parents, cascades and transactional goal repositories with revision checks; tests for invalid relationships and rollback | Milestone and task repositories; plan revision bumped by child mutations         |
+| #5 T003 | Field allowlists, limits, dates, time zones, pagination, content type, 64 KiB limit, 400/413/415/422 error shape; contract tests                                 | Milestone and task deadline validation once those endpoints exist                |
+| #6 T004 | GitHub sign-in creates the account; profile read and update with revisions; server-revocable sessions with idle and absolute expiry; same-origin checks; tests   | Live OAuth verification with real credentials; rate limiting                     |
+| #7 T005 | Owner-scoped queries, indistinguishable 404s, 401s, `no-store`, two-user tests for goals                                                                         | Extend the matrix to milestones and tasks                                        |
+| #8 T006 | Accessible forms, focused error summaries, retained input, modal delete dialog with focus restoration; viewport checks at 320, 768 and 1280                      | 200% zoom and screen-reader verification                                         |
+| #9 T007 | Goal API and screens for list, detail, new, edit and confirmed delete; lifecycle, foreign-access, deadline, pagination and rollback tests                        | Live deployment check                                                            |
+
+None of these issues is closed. Each one stays open until its remaining acceptance criteria and a peer review are complete.

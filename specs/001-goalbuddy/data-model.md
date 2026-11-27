@@ -82,3 +82,15 @@ All access derives owner from a verified session. Goal reads include `owner_id =
 Compute progress as zero for no tasks; otherwise `Math.round(100 * completedTasks / totalTasks)`. A goal is complete only with at least one task and all completed. Account totals count each task once, including tasks assigned to milestones; never average per-goal percentages. Overdue means an incomplete task whose date has ended in the profile timezone. No manual percentage, progress-entry history, or audit-feed feature is justified by P1, so no `ProgressEntry` table is introduced. P2 tags and P3 AI drafts/acceptance receipts retain their Week 02 definitions and are deferred.
 
 Before schema execution, choose and configure the provider and isolated test database, then test ownership, composite FKs, cascade rollback, concurrency, date edits, and completion/reopening. No schema was applied in Week 03.
+
+## Week 04 implementation
+
+PostgreSQL through `pg` was selected, with Auth.js v5 and the GitHub provider for identity. The schema is in [lib/server/schema.ts](../../lib/server/schema.ts) and is applied with `npm run db:migrate`. It implements the four tables, constraints, indexes and cascades described above. Triggers keep `goals.owner_id`, `milestones.goal_id` and `tasks.goal_id` immutable.
+
+`users.identity_reference` stores `github:<account id>`. One justified addition supports authentication: a `sessions` table (`id`, `user_id`, `created_at`, `last_seen_at`, `expires_at`). It makes sessions revocable server-side, with a 24-hour absolute and a 2-hour idle limit. Auth.js stores only the session and user IDs in its encrypted cookie. No provider tokens, emails or passwords are stored.
+
+Timestamps are truncated to milliseconds so that pagination cursors round-trip exactly.
+
+Goal updates and deletions lock the owned goal row, compare the expected revision, check deadline consistency against children, and write inside one transaction.
+
+Tests in `tests/` cover ownership, composite foreign keys, cascade deletion with rollback, stale revisions, deadline edits and the completion constraint. They run on in-memory PGlite. Concurrency under load and the NFR-008 performance target remain unmeasured.
