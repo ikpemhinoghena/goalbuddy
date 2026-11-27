@@ -8,6 +8,10 @@ These 15 complete issue bodies are prepared locally. No GitHub issues or Project
 
 ## Publishing and board setup
 
+### Verified Week 03 update (2026-11-20)
+
+The original text describes Week 02 preparation and is retained as history. All 15 issue drafts have since been published as #3–#17 (T001 maps to #3; add two to the task number). Do not republish them. All 15 are open and present on the public [Project Board](https://github.com/users/ikpemhinoghena/projects/1/views/1). This activity added priority labels, linked dependencies, acceptance checkboxes and scoped Week 03/04 notes to existing issue bodies. Issues #3–#9 are assigned to ikpemhinoghena in [Week 04 - Secure goal workflow](https://github.com/ikpemhinoghena/goalbuddy/milestone/1). Board-specific custom fields/status changes remain outstanding; the API credential lacks Projects scope. Exact remaining changes and dependency order are in [Week 04 plan](w04-plan.md). No duplicate issues were created and no issue was closed.
+
 Create one repository issue per entry below, using its heading after the T identifier as the title and its remaining content as the body. Replace dependency T references with actual issue links only after publication. Create or use a GitHub Project associated with this repository, add the published issues, and use Backlog, In progress, In review, and Done statuses with P1/P2/P3 priorities. Initially keep every issue in Backlog. Do not mark an issue complete without implemented acceptance criteria and review evidence. Include at least seven actionable issues on the board for W02; publishing all 15 provides the full planned scope. These are recommended future steps, not actions already taken.
 
 ## Ready-to-publish issue content

@@ -10,6 +10,10 @@ This specification uses the existing GitHub Spec-Kit v0.0.90 specification templ
 
 ## Purpose, problem, and audience
 
+### Week 03 clarification (2026-11-20)
+
+The [implementation plan](plan.md) and [core data model](data-model.md) now resolve the missing architecture detail. The public shell and labeled empty-workspace previews are implemented locally; saved features remain proposed. The basic dashboard stays P1 under US5, while enhanced visualization stays P2. Tasks may belong directly to a goal or optionally to a same-goal milestone. Progress remains derived; no ProgressEntry entity is added. PostgreSQL is recommended but provider choices remain provisional. The new Week 03 branch preserves Week 02 ancestry; review the documented branch-origin exception before integration. This dated clarification is independent work, not team approval.
+
 GoalBuddy is an AI-assisted goal planner and progress tracker. People often establish meaningful goals but struggle to identify actionable steps, maintain organization, and track consistent progress. The application will help students, professionals, and individuals managing educational, career, personal-development, and productivity goals organize ambitions into milestones and tasks with deadlines.
 
 Users will own their plans and decide whether to use optional AI-generated suggestions. Manual planning must remain useful without any AI service.

@@ -9,6 +9,10 @@ This is a specification-derived backlog prepared directly using Spec-Kit's prior
 
 ## P1: Foundation and manual-planning MVP
 
+### Week 03 status (2026-11-20)
+
+Published issues are now verified: T001–T015 map to repository issues #3–#17, respectively. The introductory statements above describe the original Week 02 preparation. T001 has a local implementation plan and model proposal; T006 has a local application shell and preview/feedback components. Neither issue meets all acceptance criteria yet. Core persistence, authentication and CRUD remain unimplemented. See [Week 04 plan](../../docs/w04-plan.md) for the verified milestone, independent assignment, dependency order, and board-permission limitation. No task is marked complete by this update.
+
 ### T001 - Document implementation design and pass Constitution Check
 
 **Priority**: P1  
