@@ -1,69 +1,125 @@
-import Image from "next/image";
+import Link from 'next/link';
+
+const steps = [
+  [
+    'Choose a meaningful goal',
+    'Give your ambition a name and a direction. Set a target date when it helps.',
+  ],
+  [
+    'Make room for small steps',
+    'Break your goal into milestones and manageable tasks that fit your day.',
+  ],
+  [
+    'See how far you have come',
+    'Let completed tasks tell the story. Revisit your plan as life changes.',
+  ],
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <div className="space-y-16 py-10 sm:py-16">
+      <section
+        className="grid items-center gap-10 lg:grid-cols-[1.2fr_1fr]"
+        aria-labelledby="home-title"
+      >
+        <div>
+          <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-primary">
+            A little structure. A lot of possibility.
+          </p>
+          <h1
+            id="home-title"
+            className="max-w-2xl text-5xl font-semibold tracking-tight sm:text-6xl"
+          >
+            Big goals.
+            <br />
+            Small steps.
+            <br />
+            <span className="text-primary">Steady progress.</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+          <p className="mt-6 max-w-xl text-lg leading-8 text-muted">
+            A calmer way to turn what matters to you into a plan you can follow. GoalBuddy brings
+            your goals, milestones, and daily tasks into one focused space.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link
+              href="/dashboard"
+              className="rounded-xl bg-primary px-6 py-3 font-semibold text-white hover:bg-primary-dark"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
+              Explore the workspace preview
+            </Link>
             <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="#how-it-works"
+              className="rounded-xl border border-border bg-white px-6 py-3 font-semibold hover:bg-surface"
             >
-              Learning
-            </a>{" "}
-            center.
+              How it works
+            </a>
+          </div>
+          <p className="mt-5 max-w-lg text-sm leading-6 text-muted">
+            GoalBuddy is in development. Sign in with GitHub to create and manage goals; milestones,
+            tasks, and progress tracking are coming next.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <aside
+          className="rounded-3xl border border-border bg-white p-7 shadow-sm sm:p-10"
+          aria-labelledby="plan-title"
+        >
+          <h2 id="plan-title" className="mb-8 text-xl font-semibold">
+            A plan that grows with you
+          </h2>
+          <ol className="space-y-7">
+            {steps.map(([title, detail], index) => (
+              <li key={title} className="flex gap-4">
+                <span
+                  aria-hidden="true"
+                  className="flex size-9 shrink-0 items-center justify-center rounded-full bg-surface font-semibold text-primary"
+                >
+                  {index + 1}
+                </span>
+                <div>
+                  <h3 className="font-semibold">{title}</h3>
+                  <p className="mt-2 leading-7 text-muted">{detail}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-8 border-t border-border pt-6 text-sm leading-6 text-muted">
+            Your pace. Your priorities. Your next step.
+          </p>
+        </aside>
+      </section>
+      <section
+        id="how-it-works"
+        aria-labelledby="features-title"
+        className="scroll-mt-6 border-t border-border pt-12"
+      >
+        <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+          Built around your progress
+        </p>
+        <h2 id="features-title" className="mt-3 text-3xl font-semibold tracking-tight">
+          Less overwhelm. More direction.
+        </h2>
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
+          {[
+            [
+              'Keep the big picture',
+              'A home for your academic, professional, and personal ambitions, with room for details and optional deadlines.',
+            ],
+            [
+              'Focus on the next step',
+              'Milestones organize the journey. Tasks make it practical. Progress will follow the work you actually complete.',
+            ],
+            [
+              'Stay in control',
+              'Plan manually from the start. Optional AI roadmaps are planned for a later release, always yours to review and change.',
+            ],
+          ].map(([title, detail]) => (
+            <article key={title} className="rounded-2xl bg-surface p-6">
+              <h3 className="text-lg font-semibold">{title}</h3>
+              <p className="mt-3 leading-7 text-muted">{detail}</p>
+            </article>
+          ))}
         </div>
-      </main>
+      </section>
     </div>
   );
 }
